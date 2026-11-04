@@ -1,0 +1,64 @@
+#pragma once
+
+#define T_SIMCAM_V1_3 13
+#define T_SIMCAM_V1_4 14
+
+// Arduino IDE: select the hardware revision here.
+#ifndef T_SIMCAM_BOARD_VERSION
+#define T_SIMCAM_BOARD_VERSION T_SIMCAM_V1_3
+#endif
+
+#if T_SIMCAM_BOARD_VERSION != T_SIMCAM_V1_3 && T_SIMCAM_BOARD_VERSION != T_SIMCAM_V1_4
+#error "T_SIMCAM_BOARD_VERSION must be T_SIMCAM_V1_3 or T_SIMCAM_V1_4"
+#endif
+
+#define T_SIMCAM_MIC_I2S 1
+#define T_SIMCAM_MIC_PDM 2
+
+#if T_SIMCAM_BOARD_VERSION == T_SIMCAM_V1_3
+#define T_SIMCAM_BOARD_NAME "T-SimCam V1.3"
+#define T_SIMCAM_MIC_TYPE T_SIMCAM_MIC_I2S
+#else
+#define T_SIMCAM_BOARD_NAME "T-SimCam V1.4"
+#define T_SIMCAM_MIC_TYPE T_SIMCAM_MIC_PDM
+#endif
+
+#define BOARD_POWER_ON_PIN 1
+#define USER_BUTTON_PIN 0
+#define BATTERY_ADC_PIN 3
+
+#define SD_MISO_PIN 40
+#define SD_MOSI_PIN 38
+#define SD_SCLK_PIN 39
+#define SD_CS_PIN 47
+
+#define MODEM_RX_PIN 46
+#define MODEM_TX_PIN 45
+#define MODEM_POWER_KEY_PIN 48
+#define MODEM_STATUS_PIN 21
+
+#define AUX_UART_RX_PIN 44
+#define AUX_UART_TX_PIN 43
+
+#define MIC_DATA_PIN 2
+#define MIC_I2S_BCLK_PIN 41
+#define MIC_I2S_WS_PIN 42
+#define MIC_PDM_CLK_PIN 42
+
+#define PWDN_GPIO_NUM -1
+#define RESET_GPIO_NUM -1
+#define XCLK_GPIO_NUM 14
+#define SIOD_GPIO_NUM 4
+#define SIOC_GPIO_NUM 5
+#define Y9_GPIO_NUM 15
+#define Y8_GPIO_NUM 16
+#define Y7_GPIO_NUM 17
+#define Y6_GPIO_NUM 12
+#define Y5_GPIO_NUM 10
+#define Y4_GPIO_NUM 8
+#define Y3_GPIO_NUM 9
+#define Y2_GPIO_NUM 11
+#define VSYNC_GPIO_NUM 6
+#define HREF_GPIO_NUM 7
+#define PCLK_GPIO_NUM 13
+#define IR_CUT_PIN 18
